@@ -21,7 +21,7 @@ def encrypt_digit_additive_inverse(digit,i):
 
 def encrypt_number_additive_inverse(number):
     y = ''
-    number = str(number)
+    number = str(int(number))
     if len(number) == 12:
         for i in range(len(number)):
             y = y + str(encrypt_digit_additive_inverse(number,i))
@@ -38,7 +38,7 @@ def encrypt_digit_shifting_backwards(digit,i):
 
 def encrypt_number_shifting_backwards(number):
     y = ''
-    number = str(number)
+    number = str(int(number))
     if len(number) == 12:
         for i in range(len(number)):
             y = y + str(encrypt_digit_shifting_backwards(number,i))
@@ -55,7 +55,7 @@ def decrypt_digit_shifting_backwards(digit,i):
 
 def decrypt_number_shifting_backwards(number):
     y = ''
-    number = str(number)
+    number = str(int(number))
     for i in range(len(number)):
         y = y + str(decrypt_digit_shifting_backwards(number,i))    
     return y
