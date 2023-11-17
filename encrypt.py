@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 st.write(""" # IC Encryption""")
 column = st.columns([2,1])
-column[0].warning(""" ###### Files type accepted are only in Excel and CSV format. The first column needs to be the IC column.""")
+column[0].warning(""" ###### File type accepted is only in Excel or CSV format. The first column needs to be the IC column.""")
 
 
 def convert_df(df):
