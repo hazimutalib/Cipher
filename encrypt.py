@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import sys
-import openpyxl
+
 
 st.set_page_config(layout="wide")
 st.write(""" # IC Encryption""")
