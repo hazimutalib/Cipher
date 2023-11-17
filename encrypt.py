@@ -6,7 +6,7 @@ st.write(""" # IC Encryption""")
 column = st.columns([2,1])
 column[0].warning(""" ###### Files type accepted are only in Excel and CSV format. The first column needs to be the IC column.""")
 
-@st.cache_data
+
 def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv(index = False).encode('utf-8')
