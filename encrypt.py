@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
-import sys
-from openpyxl import load_workbook
+
 
 
 st.set_page_config(layout="wide")
@@ -69,16 +68,10 @@ def encryption_additive_inverse():
     uploaded_file = column[0].file_uploader("Choose a file", accept_multiple_files=False)
     column = st.columns([1,1,1])
     if uploaded_file is not None:
-        workbook = load_workbook(filename="./example.xlsx")
-
-        # Get the first sheet.
-        worksheet = workbook.worksheets[0]
-
-        # Convert the sheet to a list of lists.
-        df = []
-        for r in worksheet.rows:
-            column = [cell.value for cell in r]
-            df.append(column)
+        try:
+            df = pd.read_excel(uploaded_file)
+        except:
+            df = pd.read_csv(uploaded_file)
         ic_number = df.columns[0]
         df[ic_number] = df[ic_number].astype('str')
         column[0].write(""" ### Original """)  
