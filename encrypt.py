@@ -68,7 +68,7 @@ def encryption_additive_inverse():
     column = st.columns([1,1,1])
     if uploaded_file is not None:
         try:
-            df = pd.read_excel(uploaded_file, encoding=sys.getfilesystemencoding())
+            df = pd.read_excel(uploaded_file, encoding="utf-8")
         except:
             df = pd.read_csv(uploaded_file)
         ic_number = df.columns[0]
