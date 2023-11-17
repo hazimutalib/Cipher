@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import sys
 
 st.set_page_config(layout="wide")
 st.write(""" # IC Encryption""")
@@ -67,7 +68,7 @@ def encryption_additive_inverse():
     column = st.columns([1,1,1])
     if uploaded_file is not None:
         try:
-            df = pd.read_excel(uploaded_file)
+            df = pd.read_excel(uploaded_file, encoding=sys.getfilesystemencoding())
         except:
             df = pd.read_csv(uploaded_file)
         ic_number = df.columns[0]
