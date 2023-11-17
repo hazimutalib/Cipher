@@ -67,10 +67,7 @@ def encryption_additive_inverse():
     uploaded_file = column[0].file_uploader("Choose a file", accept_multiple_files=False)
     column = st.columns([1,1,1])
     if uploaded_file is not None:
-        try:
-            df = pd.read_excel(uploaded_file)
-        except:
-            df = pd.read_csv(uploaded_file)
+        df = pd.read_excel(uploaded_file)
         ic_number = df.columns[0]
         df[ic_number] = df[ic_number].astype('str')
         column[0].write(""" ### Original """)  
